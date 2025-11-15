@@ -1,1 +1,117 @@
-chai code
+chai_type: masala_chai #inline comment
+temperature: hot
+serving: 2
+brewing_time: 5
+
+chai_recipe:   #two Spaces in indentation only.
+  base: black_tea
+  milk: whole_milk
+
+chai_recipe_two:
+  base: black_tea
+  milk: whole_milk
+
+# Datatypes String
+
+chai_name: Masala chai
+descryption: "Chai with cardimom, ginger"
+tagline: 'The best in town'
+
+brewing_instructions: | #for multiline
+  boil_water
+  add tea leaves
+  add milk
+
+brewing_instructions_two: >  #same
+  boil_water
+  add tea leaves
+  add milk
+
+#String 
+
+cups_per_day: 3
+cups_per_day_two: 0xFF23FF  #Hexa
+
+is_hot: true
+add_sugar: yes
+add_salt: no
+instant: on
+
+sweetner: null
+alternative_milk: ~   # null = ~
+
+morning_brew: 2025-01-15
+local_time: 2025-01-15 08:30:01
+
+#Collections
+
+spices:  #list/array - New method
+  - ginger
+  - cloves
+  - black_pepper
+  - true
+  - 200
+
+#spices: [cardimom, ginger, cloves] 
+steeping_times: [2,4,3]
+
+chai_categories:  #Nested  List
+  - name: Traditional
+    varieties:
+      - Masala Chai
+      - Ginger Chai
+      - Cardmom Chai
+  - name: Modern 
+    varieties:
+      - vanilla Chai
+      - Chocolate Chai
+
+      #Dict/key value Map
+
+masala_chai:
+  ingredients:
+    tea: black_tea
+    liquid:
+      water: 200ml
+      milk: 100ml
+    spices:
+      ginger: 1_inch
+      cinnamin: 1_stick
+  preparation_time:
+    method: simmer
+    duration: 5_mins
+
+     ##List of dictionary
+chai_menu:
+  - name: Masala Chai
+    price: 30
+    size: regular
+
+  - name: Ginger Chai
+    price: 30
+    size: regular
+        
+#dry preincipal
+
+default_chai_base: &default_base   #&=anchor, all value copy
+  tea: black_pepper
+  water: 200ml
+  brewing_time: 5
+
+morning_chai:
+  <<: *default_base
+  milk: 100ml 
+
+evening_chai:
+  <<: *default_base
+  milk: 200ml 
+        
+#Explicit datatype
+
+zip_code: !!str 12345
+count: !!int "123"
+
+unique_spices: !!set
+  ? cardimom
+  ? ginger
+  ? cloves
